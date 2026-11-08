@@ -70,8 +70,8 @@ st.markdown(CSS, unsafe_allow_html=True)
 @st.cache_resource
 def load_artifacts():
     return (
-        joblib.load("models/best_model.joblib"),
-        joblib.load("models/selected_features.joblib"),
+        joblib.load("best_model.joblib"),
+        joblib.load("selected_features.joblib"),
     )
 
 
