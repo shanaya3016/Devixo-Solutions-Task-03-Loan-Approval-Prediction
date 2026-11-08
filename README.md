@@ -49,20 +49,5 @@ Decision Tree and Gradient Boosting both reached 100% test F1. **Gradient Boosti
 - Add model explainability (SHAP)
 - Wrap everything in a single sklearn Pipeline for deployment
 - Deploy the Streamlit app online (Streamlit Community Cloud)
-## Screenshots
 
-### Correlation Heatmap
-![Heatmap](screenshots/heatmap.png)
-
-### Model Comparison
-![Model Comparison](screenshots/model_comparison.png)
-
-### Feature Importance
-![Feature Importance](screenshots/feature_importance.png)
-
-### Streamlit App
-![Approved](screenshots/streamlit_approved.png)
-![Rejected](screenshots/streamlit_rejected.png)
-
----
 *Final model was re-trained locally using `train_and_save.py` (same data, preprocessing and tuned parameters) to avoid a scikit-learn version mismatch between Colab and the local machine.*
