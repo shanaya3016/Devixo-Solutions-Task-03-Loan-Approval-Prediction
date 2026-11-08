@@ -10,7 +10,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import f1_score, accuracy_score
 
 # --- Data load aur cleaning ---
-df = pd.read_csv("data/loan_approval_dataset.csv")
+df = pd.read_csv("loan_approval_dataset.csv")
 df.columns = df.columns.str.strip()
 for col in df.select_dtypes(include="object").columns:
     df[col] = df[col].str.strip()
@@ -57,10 +57,13 @@ print("Test F1:", round(f1_score(y_test, pred), 4))
 print("Test Accuracy:", round(accuracy_score(y_test, pred), 4))
 
 # --- Save ---
-os.makedirs("models", exist_ok=True)
-joblib.dump(model, "models/best_model.joblib")
-with open("models/best_model.pkl", "wb") as f:
+joblib.dump(model, "best_model.joblib")
+
+with open("best_model.pkl", "wb") as f:
     pickle.dump(model, f)
-joblib.dump(scaler, "models/scaler.joblib")
-joblib.dump(selected_features, "models/selected_features.joblib")
-print("Models saved in models/ folder")
+
+joblib.dump(scaler, "scaler.joblib")
+
+joblib.dump(selected_features, "selected_features.joblib")
+
+print("Models saved in root folder")
